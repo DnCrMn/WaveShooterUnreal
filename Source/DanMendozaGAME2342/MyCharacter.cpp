@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Camera/CameraComponent.h"
+#include "Components/SceneComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
 #include "Projectile.h"
@@ -24,6 +25,10 @@ AMyCharacter::AMyCharacter()
     // Add collider and attach it to weapon
     BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Weapon Collision"));
     BoxCollider->SetupAttachment(Weapon);
+
+    // Add projectile spawn point and attach it to weapon
+    ProjectileSpawnPosition = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn Point"));
+    ProjectileSpawnPosition->SetupAttachment(Weapon);
 }
 
 // Called when the game starts or when spawned

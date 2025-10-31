@@ -26,9 +26,11 @@ protected:
 
     UPROPERTY(EditAnywhere)
     class UStaticMeshComponent* Weapon; // The player's weapon
-
     UPROPERTY(EditAnywhere)
     class UBoxComponent* BoxCollider; // The collision for the player's weapon
+    
+    UPROPERTY(EditAnywhere)
+    class USceneComponent* ProjectileSpawnPosition; // Position where the bullet will spawn
 
     UPROPERTY(EditAnywhere)
     TSubclassOf<class AProjectile> proj; // Reference to the weapon's projectile
