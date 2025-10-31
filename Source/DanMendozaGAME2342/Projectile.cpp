@@ -2,6 +2,7 @@
 
 
 #include "Components/StaticMeshComponent.h"
+#include "Components/BoxComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Projectile.h"
 
@@ -14,6 +15,10 @@ AProjectile::AProjectile()
     // Initialize mesh and make it the root component
     Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
     RootComponent = Mesh;
+
+    // Add collider and attach it to weapon
+    BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Projectile Collision"));
+    BoxCollider->SetupAttachment(Mesh);
 
     ProjectileComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Component")); 
     ProjectileComponent->InitialSpeed = 3000;

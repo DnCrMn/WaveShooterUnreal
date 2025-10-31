@@ -23,9 +23,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-    // Objects inside the hierarchy
+    /* [Objects That Will Appear in The Blueprint's Hierarchy] */
     UPROPERTY(EditAnywhere)
     class UStaticMeshComponent* Mesh;
+
+    UPROPERTY(EditAnywhere)
+    class UBoxComponent* BoxCollider; // The collision for the projectile 
 
     UPROPERTY(EditAnywhere)
     class UProjectileMovementComponent* ProjectileComponent;

@@ -26,6 +26,7 @@ protected:
 
     UPROPERTY(EditAnywhere)
     class UStaticMeshComponent* Weapon; // The player's weapon
+    
     UPROPERTY(EditAnywhere)
     class UBoxComponent* BoxCollider; // The collision for the player's weapon
     
