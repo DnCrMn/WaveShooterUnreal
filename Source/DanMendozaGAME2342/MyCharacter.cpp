@@ -91,6 +91,6 @@ void AMyCharacter::MouseLR(float InputValue)
 
 void AMyCharacter::Shoot()
 {
-    GetWorld()->SpawnActor<AProjectile>(proj, Weapon->GetComponentLocation(),
-                                        Weapon->GetComponentRotation());
+    GetWorld()->SpawnActor<AProjectile>(proj, ProjectileSpawnPosition->GetComponentLocation(),
+                                        ProjectileSpawnPosition->GetComponentRotation());
 }
