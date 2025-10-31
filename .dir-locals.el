@@ -1,0 +1,7 @@
+((nil . ((lsp-clients-clangd-executable . "Path To Microsoft clangd")
+		 (ue-assist--generate-bat . "D:/UE5_Projects/DanMendozaGAME2342/generate.bat")
+		 (ue-assist--build-bat . "D:/UE5_Projects/DanMendozaGAME2342/build.bat")
+		 (ue-assist--editor-bat . "D:/UE5_Projects/DanMendozaGAME2342/editor.bat")
+		 (ue-assist-api . "DANMENDOZAGAME2342_API")))
+ (c++-mode . ((eval . (ue-assist-mode 1))))
+ (c-mode . ((eval . (ue-assist-mode 1)))))
