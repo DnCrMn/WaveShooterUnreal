@@ -30,7 +30,7 @@ protected:
     UPROPERTY(EditAnywhere)
     class UBoxComponent* BoxCollider; // The collision for the player's weapon
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
     class USceneComponent* ProjectileSpawnPosition; // Position where the bullet will spawn
 
     UPROPERTY(EditAnywhere)
