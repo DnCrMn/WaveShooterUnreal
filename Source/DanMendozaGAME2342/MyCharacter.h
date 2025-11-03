@@ -45,7 +45,10 @@ protected:
     void MouseLR(float InputValue);
 
     // Other Character actions
+    UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
     void Shoot();
+
+    void Shoot_Implementation();
 
 public:	
 	// Called every frame

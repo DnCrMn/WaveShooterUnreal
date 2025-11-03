@@ -89,7 +89,7 @@ void AMyCharacter::MouseLR(float InputValue)
     AddControllerYawInput(InputValue);
 }
 
-void AMyCharacter::Shoot()
+void AMyCharacter::Shoot_Implementation()
 {
     GetWorld()->SpawnActor<AProjectile>(proj, ProjectileSpawnPosition->GetComponentLocation(),
                                         ProjectileSpawnPosition->GetComponentRotation());
