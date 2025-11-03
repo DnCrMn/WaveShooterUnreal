@@ -24,6 +24,8 @@ AProjectile::AProjectile()
     ProjectileComponent->InitialSpeed = 3000;
     ProjectileComponent->MaxSpeed = 5000;
 
+    // Initialize a default value for projectile damage
+    ProjectileDamage = 25;
 }
 
 // Called when the game starts or when spawned
