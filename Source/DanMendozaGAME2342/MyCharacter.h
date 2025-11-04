@@ -25,6 +25,9 @@ protected:
     class UCameraComponent* MyCamera; // The player's camera
 
     UPROPERTY(EditAnywhere)
+    class UStaticMeshComponent* Arms; // The player's weapon
+    
+    UPROPERTY(EditAnywhere)
     class UStaticMeshComponent* Weapon; // The player's weapon
     
     UPROPERTY(EditAnywhere)

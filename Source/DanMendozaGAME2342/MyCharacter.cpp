@@ -18,6 +18,10 @@ AMyCharacter::AMyCharacter()
     MyCamera->SetupAttachment(RootComponent);
     MyCamera->bUsePawnControlRotation = true; 
 
+    // Add arms to the character
+    Arms = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Player Arms"));
+    Arms->SetupAttachment(MyCamera);
+
     // Add weapon and attach it to the camera
     Weapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Player Weapon"));
     Weapon->SetupAttachment(MyCamera);
