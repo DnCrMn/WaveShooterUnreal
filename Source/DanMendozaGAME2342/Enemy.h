@@ -15,6 +15,7 @@ public:
 	// Sets default values for this character's properties
 	AEnemy();
     
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
     float EnemyHealth; // How much health the enemy has
 
 protected:

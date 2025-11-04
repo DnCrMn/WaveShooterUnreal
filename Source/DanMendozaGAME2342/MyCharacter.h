@@ -16,6 +16,11 @@ public:
 	// Sets default values for this character's properties
 	AMyCharacter();
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    float PlayerHealth; // The current health the player has
+
+
+    bool IsDead; // Inidicates if the player is dead
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

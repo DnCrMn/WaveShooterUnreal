@@ -13,6 +13,12 @@ AMyCharacter::AMyCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
     
+    // Initialize player health
+    PlayerHealth = 100;
+
+    // Initialize Is Dead 
+    IsDead = false;
+
     // Add Camera
     MyCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("Player Camera"));
     MyCamera->SetupAttachment(RootComponent);
@@ -45,6 +51,18 @@ void AMyCharacter::BeginPlay()
 void AMyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+    // If the player's health reaches 0
+    if (PlayerHealth <= 0 && !IsDead) {
+        IsDead = true;
+        GEngine->AddOnScreenDebugMessage(
+            -1,
+            5.0f,
+            FColor::Red,
+            TEXT("YOU DIED!")
+        );
+    }
+        
 
 }
 
