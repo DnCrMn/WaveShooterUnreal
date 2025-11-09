@@ -33,6 +33,6 @@ public:
     UPROPERTY(EditAnywhere)
     class UProjectileMovementComponent* ProjectileComponent;
 
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
     int ProjectileDamage; // Damage done when hit by the projectile
 };

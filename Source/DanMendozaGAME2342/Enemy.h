@@ -17,6 +17,15 @@ public:
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     float EnemyHealth; // How much health the enemy has
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    float EnemyDamage; // How much damage the enemy does to the player's health
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    float DamageCooldown; // How often the player damages the player on collision in seconds
+    
+    UPROPERTY(EditAnywhere)
+    class UBoxComponent* HitBox;
 
 protected:
 	// Called when the game starts or when spawned

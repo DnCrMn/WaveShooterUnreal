@@ -4,6 +4,7 @@
 #include "Components/SceneComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
+#include "Kismet/GameplayStatics.h"
 #include "Projectile.h"
 #include "MyCharacter.h"
 
@@ -54,16 +55,19 @@ void AMyCharacter::Tick(float DeltaTime)
 
     // If the player's health reaches 0
     if (PlayerHealth <= 0 && !IsDead) {
-        IsDead = true;
+        IsDead = true; // Set IsDead to true so this doesn't activate multiple times
+
+        // Print "YOU DIED!" to screen
         GEngine->AddOnScreenDebugMessage(
             -1,
             5.0f,
             FColor::Red,
             TEXT("YOU DIED!")
         );
-    }
-        
 
+        // Restart the level
+        RestartLevel(); 
+    }
 }
 
 // Called to bind functionality to input
@@ -115,4 +119,18 @@ void AMyCharacter::Shoot_Implementation()
 {
     GetWorld()->SpawnActor<AProjectile>(proj, ProjectileSpawnPosition->GetComponentLocation(),
                                         ProjectileSpawnPosition->GetComponentRotation());
+}
+
+void AMyCharacter::RestartLevel()
+{
+    if (GetWorld())
+    {
+        GEngine->AddOnScreenDebugMessage(
+            -1,
+            5.0f,
+            FColor::Yellow,
+            TEXT("Restarting...")
+        );
+        UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
+    }
 }

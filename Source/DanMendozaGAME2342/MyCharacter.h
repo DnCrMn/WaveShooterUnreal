@@ -58,6 +58,9 @@ protected:
 
     void Shoot_Implementation();
 
+    // Restarts the level
+    void RestartLevel();
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
